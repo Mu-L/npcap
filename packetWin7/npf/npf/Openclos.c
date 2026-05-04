@@ -2053,11 +2053,6 @@ Return Value:
 	UNREFERENCED_PARAMETER(NdisFilterHandle);
 	TRACE_ENTER();
 
-#ifdef HAVE_WFP_LOOPBACK_SUPPORT
-	/* This callback is only for the NDIS LWF, not WFP/loopback */
-	NT_ASSERT(!((PNPCAP_FILTER_MODULE) NdisFilterHandle)->Loopback);
-#endif
-
 	TRACE_EXIT();
 
 	return NDIS_STATUS_SUCCESS;
